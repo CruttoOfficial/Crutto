@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crutto (CRT) | Official Token Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #111;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #ffffff;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .container {
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .token-info {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #0070f3;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+      margin: 40px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Crutto (CRT)</h1>
+    <p>Decentralized. Anti-Whale. Auto-Burn. Gas Optimized.</p>
+  </header>
+  <div class="container">
+
+    <div class="section token-info">
+      <h2>Token Info</h2>
+      <p><strong>Symbol:</strong> CRT</p>
+      <p><strong>Network:</strong> Ethereum Mainnet</p>
+      <p><strong>Contract Address:</strong> 0x3Def65923477BBd0c79ce81A7B73DDA01d87eFe0</p>
+      <p><strong>Total Supply:</strong> 100,000,000 CRT</p>
+      <p><strong>Decimals:</strong> 18</p>
+      <a href="https://etherscan.io/token/0x3Def65923477BBd0c79ce81A7B73DDA01d87eFe0" class="button" target="_blank">View on Etherscan</a>
+    </div>
+
+    <div class="section token-info">
+      <h2>Key Features</h2>
+      <ul>
+        <li>✅ Anti-Whale Protection</li>
+        <li>🔥 Auto-Burn (0.1% per transaction)</li>
+        <li>🛡️ Mint Lock + Ownership Renounced</li>
+        <li>⚡ Gas Optimized (Cheaper Transactions)</li>
+        <li>🔓 Fully Open Source & Verified Contract</li>
+        <li>📊 Liquidity Auto-Injection</li>
+        <li>🌍 Community-Driven Vision</li>
+      </ul>
+    </div>
+
+    <div class="section token-info">
+      <h2>Get CRT</h2>
+      <p>You can buy Crutto (CRT) on Uniswap. Make sure to use the correct contract address above.</p>
+      <a href="https://app.uniswap.org/#/swap?outputCurrency=0x3Def65923477BBd0c79ce81A7B73DDA01d87eFe0" class="button" target="_blank">Buy on Uniswap</a>
+    </div>
+
+    <div class="section token-info">
+      <h2>Add CRT to MetaMask</h2>
+      <p>Click the button below to add Crutto (CRT) to your MetaMask wallet.</p>
+      <button class="button" onclick="addTokenToMetaMask()">Add to MetaMask</button>
+    </div>
+
+  </div>
+  <footer>
+    © 2025 Crutto Project. Built by Achu & GPT. Community First. Code Forever.
+  </footer>
+
+  <script>
+    async function addTokenToMetaMask() {
+      try {
+        const wasAdded = await ethereum.request({
+          method: 'wallet_watchAsset',
+          params: {
+            type: 'ERC20',
+            options: {
+              address: '0x3Def65923477BBd0c79ce81A7B73DDA01d87eFe0',
+              symbol: 'CRT',
+              decimals: 18,
+              image: 'https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/logo.png'
+            },
+          },
+        });
+        if (wasAdded) {
+          alert('Crutto (CRT) added to MetaMask!');
+        } else {
+          alert('Token addition canceled');
+        }
+      } catch (error) {
+        console.error(error);
+        alert('Error adding token. Make sure MetaMask is connected.');
+      }
+    }
+  </script>
+</body>
+</html>
