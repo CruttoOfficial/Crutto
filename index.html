@@ -37,6 +37,8 @@
     .hero {
       text-align: center;
       padding: 4rem 1rem;
+      background: linear-gradient(145deg, #1f1f1f, #0e0e0e);
+      box-shadow: 0 0 60px rgba(139, 92, 246, 0.3);
     }
     .hero h2 {
       font-size: 2.8rem;
@@ -55,6 +57,10 @@
       border-radius: 0.5rem;
       font-size: 1rem;
       cursor: pointer;
+      transition: 0.3s;
+    }
+    .hero button:hover {
+      background: #7c3aed;
     }
     .section {
       padding: 4rem 2rem;
@@ -65,6 +71,7 @@
       font-size: 2rem;
       text-align: center;
       margin-bottom: 2rem;
+      color: #a855f7;
     }
     .grid {
       display: grid;
@@ -78,10 +85,15 @@
       padding: 2rem;
       border-radius: 1rem;
       text-align: center;
+      transition: 0.3s;
+    }
+    .card:hover {
+      background: #2e2e2e;
     }
     .card h4 {
       font-size: 1.2rem;
       margin-bottom: 0.5rem;
+      color: #f472b6;
     }
     .comparison-table {
       width: 100%;
@@ -118,7 +130,7 @@
 
   <section class="hero">
     <h2>Decentralized. Trusted. Immutable.</h2>
-    <p>Crutto (CRT) is a fair-launched, community-driven crypto with anti-whale protection, auto burn, and no central control.</p>
+    <p>Crutto (CRT) is a fair-launched, community-driven crypto with anti-whale protection, auto burn, and no central control. Launching at just <strong>$0.1 per CRT</strong>.</p>
     <button>Explore Features</button>
   </section>
 
@@ -138,8 +150,10 @@
     <h3>Tokenomics</h3>
     <div class="grid tokenomics">
       <div class="card"><h4>Total Supply</h4><p>100,000,000 CRT</p></div>
-      <div class="card"><h4>Liquidity Pool</h4><p>80,000,000 CRT</p></div>
-      <div class="card"><h4>Dev & Promos</h4><p>10,000,000 CRT</p></div>
+      <div class="card"><h4>In My Hand</h4><p>10,000,000 CRT</p></div>
+      <div class="card"><h4>Dev & Influencers</h4><p>10,000,000 CRT</p></div>
+      <div class="card"><h4>Presale</h4><p>10,000,000 CRT</p></div>
+      <div class="card"><h4>Liquidity Pool</h4><p>70,000,000 CRT</p></div>
     </div>
   </section>
 
@@ -166,7 +180,8 @@
   </section>
 
   <footer id="contact">
-    Contact us: @cruttoofficial | Built by the community | All rights reserved © 2025
+    Contact us: @cruttoofficial | Built by the community | All rights reserved © 2025<br/>
+    Launch Price: <strong>$0.1 per CRT</strong>
   </footer>
 </body>
 </html>
