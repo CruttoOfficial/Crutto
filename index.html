@@ -1,175 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crutto (CRT) | The Future of Meme Coins</title>
-  <style>
-    :root {
-      --primary-color: #0070f3;
-      --bg-color: #f2f4f8;
-      --card-color: #ffffff;
-      --text-color: #111;
-      --accent-color: #ff4081;
-    }
+// Crutto Landing Page - React + Tailwind
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-    }
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { CheckCircle } from "lucide-react";
 
-    header {
-      background-color: var(--card-color);
-      padding: 40px 20px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
+export default function CruttoLandingPage() {
+  return (
+    <div className="bg-black text-white min-h-screen font-sans">
+      {/* Header */}
+      <header className="p-6 flex justify-between items-center border-b border-gray-800">
+        <h1 className="text-3xl font-bold">Crutto (CRT)</h1>
+        <Button className="bg-white text-black rounded-2xl shadow px-6 py-2">Buy Now</Button>
+      </header>
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
+      {/* Hero Section */}
+      <section className="text-center py-16 px-4 max-w-4xl mx-auto">
+        <h2 className="text-5xl font-bold mb-4">Welcome to Crutto</h2>
+        <p className="text-gray-300 text-lg mb-6">
+          A fully decentralized, auto-burning, anti-whale protected crypto with zero owner control. Built for the people.
+        </p>
+        <Button className="bg-purple-500 hover:bg-purple-600 text-white text-lg px-8 py-3 rounded-2xl">Explore Features</Button>
+      </section>
 
-    h2 {
-      font-size: 1.5rem;
-      color: var(--primary-color);
-    }
+      {/* Features Section */}
+      <section className="py-20 bg-gray-900 px-6">
+        <h3 className="text-4xl font-bold text-center mb-12">Key Features</h3>
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {[
+            "Anti-Whale Protection",
+            "Auto Liquidity Pool Injection",
+            "0.1% Auto-Burn per transaction",
+            "Mint Lock + Ownership Renounced",
+            "Gas Optimized Transactions",
+            "Open-Source & Audited Code"
+          ].map((feature) => (
+            <Card key={feature} className="bg-gray-800 border-none">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <CheckCircle className="text-green-400" />
+                  <p className="text-white text-lg">{feature}</p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
 
-    p, li {
-      font-size: 1rem;
-      line-height: 1.6;
-    }
+      {/* Tokenomics */}
+      <section className="py-20 px-6">
+        <h3 className="text-4xl font-bold text-center mb-12">Tokenomics</h3>
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto text-center">
+          <Card className="bg-gray-800 border-none">
+            <CardContent className="p-6">
+              <p className="text-xl">Total Supply</p>
+              <h4 className="text-3xl font-bold mt-2">100,000,000 CRT</h4>
+            </CardContent>
+          </Card>
+          <Card className="bg-gray-800 border-none">
+            <CardContent className="p-6">
+              <p className="text-xl">Liquidity Pool</p>
+              <h4 className="text-3xl font-bold mt-2">90,000,000 CRT</h4>
+            </CardContent>
+          </Card>
+          <Card className="bg-gray-800 border-none">
+            <CardContent className="p-6">
+              <p className="text-xl">Development + Promotions</p>
+              <h4 className="text-3xl font-bold mt-2">10,000,000 CRT</h4>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
 
-    .container {
-      max-width: 960px;
-      margin: auto;
-      padding: 20px;
-    }
+      {/* Comparison Section */}
+      <section className="py-20 bg-gray-950 px-6">
+        <h3 className="text-4xl font-bold text-center mb-12">Compare with Other Meme Coins</h3>
+        <div className="overflow-auto max-w-6xl mx-auto">
+          <table className="w-full text-left table-auto text-white border border-gray-800">
+            <thead className="bg-gray-800">
+              <tr>
+                <th className="p-4">Feature</th>
+                <th className="p-4">Crutto</th>
+                <th className="p-4">Shiba</th>
+                <th className="p-4">Doge</th>
+                <th className="p-4">Pepe</th>
+              </tr>
+            </thead>
+            <tbody className="bg-gray-900">
+              {[
+                ["Auto-Burn", "✅", "❌", "❌", "❌"],
+                ["Anti-Whale", "✅", "❌", "❌", "❌"],
+                ["Auto-Liquidity", "✅", "❌", "❌", "❌"],
+                ["Renounced Ownership", "✅", "✅", "❌", "❌"],
+                ["Gas Optimized", "✅", "❌", "❌", "❌"],
+              ].map(([feature, crutto, shiba, doge, pepe]) => (
+                <tr key={feature} className="border-t border-gray-800">
+                  <td className="p-4 font-medium">{feature}</td>
+                  <td className="p-4">{crutto}</td>
+                  <td className="p-4">{shiba}</td>
+                  <td className="p-4">{doge}</td>
+                  <td className="p-4">{pepe}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
 
-    .card {
-      background-color: var(--card-color);
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      padding: 20px;
-      margin-bottom: 30px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 12px 24px;
-      background-color: var(--primary-color);
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      margin-top: 10px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 0;
-      font-size: 0.9rem;
-      color: #666;
-    }
-
-    @media screen and (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      h2 {
-        font-size: 1.25rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Crutto (CRT)</h1>
-    <p>The next-gen meme token with real features. Built different. Burn different.</p>
-  </header>
-
-  <div class="container">
-    <div class="card">
-      <h2>📌 Token Information</h2>
-      <p><strong>Symbol:</strong> CRT</p>
-      <p><strong>Network:</strong> Ethereum Mainnet</p>
-      <p><strong>Contract:</strong> 0x3Def65923477BBd0c79ce81A7B73DDA01d87eFe0</p>
-      <p><strong>Total Supply:</strong> 100,000,000</p>
-      <p><strong>Decimals:</strong> 18</p>
-      <a href="https://etherscan.io/token/0x3Def65923477BBd0c79ce81A7B73DDA01d87eFe0" class="button" target="_blank">View on Etherscan</a>
+      {/* Footer */}
+      <footer className="text-center text-gray-500 py-6 text-sm border-t border-gray-800">
+        © 2025 Crutto Token. All Rights Reserved.
+      </footer>
     </div>
-
-    <div class="card">
-      <h2>🚀 What Makes Crutto Special?</h2>
-      <ul>
-        <li><strong>🛡 Anti-Whale Protection:</strong> Prevents mega wallets from crashing the price. Keeps trading fair for all.</li>
-        <li><strong>🔥 Auto-Burn:</strong> 0.1% of every transaction is burned forever. Less supply = higher value over time.</li>
-        <li><strong>🧊 Mint Lock + Ownership Renounced:</strong> No rug pulls here. Contract is locked and ownership is renounced.</li>
-        <li><strong>⚡ Gas Optimized:</strong> Every transaction is coded to use minimal gas — saving users money.</li>
-        <li><strong>💧 Auto Liquidity Injection:</strong> Part of fees go into the pool to increase liquidity and support price stability.</li>
-        <li><strong>🔓 Verified & Open Source:</strong> Transparent code, viewable by anyone. Auditable by the community.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>📈 Buy CRT</h2>
-      <p>Purchase Crutto (CRT) on Uniswap. Just connect your wallet and swap ETH for CRT.</p>
-      <a href="https://app.uniswap.org/#/swap?outputCurrency=0x3Def65923477BBd0c79ce81A7B73DDA01d87eFe0" class="button" target="_blank">Buy on Uniswap</a>
-    </div>
-
-    <div class="card">
-      <h2>💼 Add CRT to MetaMask</h2>
-      <p>Click the button below to add Crutto (CRT) to your MetaMask wallet in one click.</p>
-      <button class="button" onclick="addTokenToMetaMask()">Add to MetaMask</button>
-    </div>
-
-    <div class="card">
-      <h2>📊 CRT vs Shiba & Doge</h2>
-      <ul>
-        <li><strong>🔥 Auto-Burn:</strong> Shiba & Doge don’t have fixed auto-burn like CRT</li>
-        <li><strong>🛡 Anti-Whale:</strong> CRT has native anti-whale features</li>
-        <li><strong>🔐 Mint Lock:</strong> CRT’s minting is locked — unlike most meme coins</li>
-        <li><strong>💧 Liquidity Auto-Injection:</strong> CRT feeds the LP. No manual LP top-ups.</li>
-        <li><strong>🧠 Built-in Governance:</strong> CRT supports future DAO upgrades, unlike legacy meme coins</li>
-      </ul>
-    </div>
-  </div>
-
-  <footer>
-    ⚙️ Built by Achu & GPT | 🌐 Crutto Project | 🧊 Ethereum Mainnet | 💬 Community First, Always
-  </footer>
-
-  <script>
-    async function addTokenToMetaMask() {
-      try {
-        const wasAdded = await ethereum.request({
-          method: 'wallet_watchAsset',
-          params: {
-            type: 'ERC20',
-            options: {
-              address: '0x3Def65923477BBd0c79ce81A7B73DDA01d87eFe0',
-              symbol: 'CRT',
-              decimals: 18,
-              image: 'https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/logo.png'
-            },
-          },
-        });
-        if (wasAdded) {
-          alert('Crutto (CRT) added to MetaMask!');
-        } else {
-          alert('Token addition canceled');
-        }
-      } catch (error) {
-        console.error(error);
-        alert('Error adding token. Make sure MetaMask is connected.');
-      }
-    }
-  </script>
-</body>
-</html>
+  );
+}
