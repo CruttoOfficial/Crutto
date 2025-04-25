@@ -1,99 +1,172 @@
-// Crutto - Trustworthy Landing Page
-// React + Tailwind CSS version
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crutto (CRT) - Decentralized Crypto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background-color: #0a0a0a;
+      color: white;
+      line-height: 1.6;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      background: #111;
+      border-bottom: 1px solid #333;
+    }
+    header h1 {
+      font-size: 1.8rem;
+    }
+    nav a {
+      margin-left: 1.2rem;
+      color: #aaa;
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: white;
+    }
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+    .hero h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      color: #ccc;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    .hero button {
+      background: #8b5cf6;
+      color: white;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .section h3 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .grid {
+      display: grid;
+      gap: 2rem;
+    }
+    .features, .tokenomics {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .card {
+      background: #1a1a1a;
+      padding: 2rem;
+      border-radius: 1rem;
+      text-align: center;
+    }
+    .card h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .comparison-table th, .comparison-table td {
+      border: 1px solid #333;
+      padding: 1rem;
+      text-align: center;
+    }
+    .comparison-table th {
+      background-color: #111;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      padding: 2rem;
+      border-top: 1px solid #333;
+      background: #111;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Crutto (CRT)</h1>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#comparison">Comparison</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-import React from "react";
+  <section class="hero">
+    <h2>Decentralized. Trusted. Immutable.</h2>
+    <p>Crutto (CRT) is a fair-launched, community-driven crypto with anti-whale protection, auto burn, and no central control.</p>
+    <button>Explore Features</button>
+  </section>
 
-export default function CruttoLandingPage() {
-  return (
-    <div className="bg-[#0a0a0a] text-white min-h-screen">
-      {/* Header */}
-      <header className="flex items-center justify-between px-8 py-6 border-b border-gray-800">
-        <h1 className="text-3xl font-bold">Crutto (CRT)</h1>
-        <nav className="space-x-6 text-gray-300 text-sm">
-          <a href="#features" className="hover:text-white">Features</a>
-          <a href="#tokenomics" className="hover:text-white">Tokenomics</a>
-          <a href="#comparison" className="hover:text-white">Comparison</a>
-          <a href="#contact" className="hover:text-white">Contact</a>
-        </nav>
-      </header>
-
-      {/* Hero Section */}
-      <section className="text-center py-20 px-4 max-w-3xl mx-auto">
-        <h2 className="text-5xl font-bold leading-tight mb-6">A New Era of Trust & Transparency</h2>
-        <p className="text-lg text-gray-300 mb-8">
-          Crutto (CRT) is a decentralized, anti-whale, auto-burning token with zero owner control and a fair launch philosophy.
-        </p>
-        <a href="#features">
-          <button className="bg-purple-600 hover:bg-purple-700 px-8 py-3 rounded-xl font-medium text-white">Explore Features</button>
-        </a>
-      </section>
-
-      {/* Features Section */}
-      <section id="features" className="py-20 px-8 bg-gray-900">
-        <h3 className="text-4xl font-bold text-center mb-12">Key Features</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {["Anti-Whale Protection", "Auto LP Injection", "0.1% Auto-Burn", "Mint Lock + Owner Renounced", "Gas Optimized", "Open-Source Contract"].map((feature, i) => (
-            <div key={i} className="bg-gray-800 p-6 rounded-xl shadow">
-              <h4 className="text-xl font-semibold mb-2">{feature}</h4>
-              <p className="text-sm text-gray-400">Crutto integrates this feature to ensure fairness, decentralization and better long-term value.</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Tokenomics Section */}
-      <section id="tokenomics" className="py-20 px-8">
-        <h3 className="text-4xl font-bold text-center mb-12">Tokenomics</h3>
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-          <div className="bg-gray-800 p-6 rounded-xl">
-            <h4 className="text-xl">Total Supply</h4>
-            <p className="text-3xl font-bold mt-2">100,000,000 CRT</p>
-          </div>
-          <div className="bg-gray-800 p-6 rounded-xl">
-            <h4 className="text-xl">Liquidity Pool</h4>
-            <p className="text-3xl font-bold mt-2">80,000,000 CRT</p>
-          </div>
-          <div className="bg-gray-800 p-6 rounded-xl">
-            <h4 className="text-xl">Dev + Promotions</h4>
-            <p className="text-3xl font-bold mt-2">10,000,000 CRT</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Comparison Section */}
-      <section id="comparison" className="py-20 bg-gray-950 px-8">
-        <h3 className="text-4xl font-bold text-center mb-12">How Crutto Stands Out</h3>
-        <div className="overflow-auto max-w-6xl mx-auto">
-          <table className="w-full table-auto text-white border border-gray-800 text-sm">
-            <thead className="bg-gray-800">
-              <tr>
-                <th className="p-3">Feature</th>
-                <th className="p-3">Crutto</th>
-                <th className="p-3">Shiba</th>
-                <th className="p-3">Doge</th>
-                <th className="p-3">Pepe</th>
-              </tr>
-            </thead>
-            <tbody className="bg-gray-900">
-              {["Auto-Burn", "Anti-Whale", "Auto LP Inject", "Owner Renounced", "Gas Optimized"].map((item, idx) => (
-                <tr key={idx} className="border-t border-gray-800 text-center">
-                  <td className="p-3 font-medium text-left">{item}</td>
-                  <td className="p-3">✅</td>
-                  <td className="p-3">❌</td>
-                  <td className="p-3">❌</td>
-                  <td className="p-3">❌</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      {/* Footer Section */}
-      <footer id="contact" className="text-center text-gray-400 py-8 text-sm border-t border-gray-800">
-        <p>📩 Contact: @cruttoofficial | Built for the community. No middlemen, no manipulation.</p>
-        <p className="mt-2">© 2025 Crutto Token. All rights reserved.</p>
-      </footer>
+  <section id="features" class="section">
+    <h3>Key Features</h3>
+    <div class="grid features">
+      <div class="card"><h4>Anti-Whale</h4><p>Transaction limits prevent manipulation</p></div>
+      <div class="card"><h4>Auto LP Injection</h4><p>Liquidity is consistently reinforced</p></div>
+      <div class="card"><h4>0.1% Auto-Burn</h4><p>Deflation built-in with every transaction</p></div>
+      <div class="card"><h4>Mint Lock</h4><p>No further minting possible</p></div>
+      <div class="card"><h4>Renounced Ownership</h4><p>Fully community-controlled</p></div>
+      <div class="card"><h4>Gas Optimized</h4><p>Low fees for users on every TX</p></div>
     </div>
-  );
-}
+  </section>
+
+  <section id="tokenomics" class="section">
+    <h3>Tokenomics</h3>
+    <div class="grid tokenomics">
+      <div class="card"><h4>Total Supply</h4><p>100,000,000 CRT</p></div>
+      <div class="card"><h4>Liquidity Pool</h4><p>80,000,000 CRT</p></div>
+      <div class="card"><h4>Dev & Promos</h4><p>10,000,000 CRT</p></div>
+    </div>
+  </section>
+
+  <section id="comparison" class="section">
+    <h3>Compare with Other Meme Coins</h3>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Crutto</th>
+          <th>Shiba</th>
+          <th>Doge</th>
+          <th>Pepe</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Auto-Burn</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td></tr>
+        <tr><td>Anti-Whale</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td></tr>
+        <tr><td>Auto LP</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td></tr>
+        <tr><td>Ownership Renounced</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td></tr>
+        <tr><td>Gas Optimized</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer id="contact">
+    Contact us: @cruttoofficial | Built by the community | All rights reserved © 2025
+  </footer>
+</body>
+</html>
