@@ -3,128 +3,188 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crutto | The Next Revolution in Crypto</title>
+  <title>Crutto - The Next-Gen Presale Platform</title>
+
+  <!-- META SEO Tags -->
+  <meta name="description" content="Crutto - The Next-Gen Multi-Chain Presale Launchpad. Launch your coin, raise funds, build community.">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <meta name="description" content="Crutto (CRT) - Decentralized, Auto-Burn, Anti-Whale. Presale Live Now! Be Early. Be Bold. Be Crutto.">
-  <meta property="og:title" content="Crutto (CRT) Presale Live!">
-  <meta property="og:description" content="Join the Crutto Revolution. 100M CRT Total Supply. Auto-burn | Anti-Whale | Ownership Renounced.">
-  <meta property="og:image" content="https://yourgithuburl.com/images/crutto-banner.png">
-  <meta property="og:url" content="https://yourgithuburl.com/">
-  <link rel="stylesheet" href="https://www.crutto.xyz/style.css">
-  <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+
+  <!-- Style (Inline because you asked single file) -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #0b0c10, #1f2833);
+      font-family: 'Poppins', sans-serif;
+      color: #c5c6c7;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #0b0c10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(102, 252, 241, 0.2);
+    }
+
+    nav .logo {
+      color: #66fcf1;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #c5c6c7;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #66fcf1;
+    }
+
+    .connect-wallet {
+      background: #45a29e;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      color: #0b0c10;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .connect-wallet:hover {
+      background: #66fcf1;
+      color: #0b0c10;
+      box-shadow: 0 0 15px #66fcf1;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100vh;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      color: #66fcf1;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #c5c6c7;
+      margin-bottom: 40px;
+      animation: fadeInUp 1.2s ease;
+    }
+
+    .hero .cta-buttons {
+      display: flex;
+      gap: 20px;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    .hero .cta-buttons button {
+      background: #45a29e;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    .hero .cta-buttons button:hover {
+      background: #66fcf1;
+      color: #0b0c10;
+      box-shadow: 0 0 15px #66fcf1;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        padding: 10px 20px;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .hero h1 {
+        font-size: 36px;
+      }
+      .hero p {
+        font-size: 18px;
+      }
+    }
+  </style>
+
 </head>
+
 <body>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <h1>🚀 Welcome to the Crutto Revolution</h1>
-      <p>Be Early. Be Bold. Be Crutto.</p>
-      <p>Presale Price: <strong>$0.10 / CRT</strong></p>
-      <button id="connectButton" onclick="connectWallet()">Connect Wallet</button>
-      <button onclick="openModal()">Buy Now</button>
-    </div>
-  </section>
+<!-- Navbar -->
+<nav>
+  <div class="logo">Crutto</div>
+  <ul>
+    <li><a href="#">Launchpad</a></li>
+    <li><a href="#">Locks</a></li>
+    <li><a href="#">Airdrop</a></li>
+    <li><a href="#">Docs</a></li>
+  </ul>
+  <button class="connect-wallet">Connect Wallet</button>
+</nav>
 
-  <!-- Modal -->
-  <div id="buyModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2>How to Participate in Crutto Presale</h2>
-      <ol>
-        <li>Connect your MetaMask wallet.</li>
-        <li>Send ETH to the presale address: <strong>0xYourPresaleWalletAddress</strong></li>
-        <li>CRT tokens will be sent to your wallet after the presale ends.</li>
-      </ol>
-    </div>
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Crutto - The Next-Gen Presale Platform</h1>
+  <p>Launch your coin, raise funds, build community.</p>
+  <div class="cta-buttons">
+    <button onclick="alert('Presale Launch Coming Soon!')">Create Presale</button>
+    <button onclick="document.getElementById('features').scrollIntoView({ behavior: 'smooth' });">Learn More</button>
   </div>
+</section>
 
-  <!-- About Section -->
-  <section class="about">
-    <div class="container">
-      <h2>Why Crutto?</h2>
-      <ul>
-        <li>🔥 Auto-Burn Mechanism</li>
-        <li>🐳 Anti-Whale Protection</li>
-        <li>🔒 Ownership Renounced</li>
-        <li>💻 Open-Source Verified Contract</li>
-        <li>⚡ Gas Optimized Transactions</li>
-        <li>🌐 Fully Decentralized</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Tokenomics -->
-  <section class="tokenomics">
-    <div class="container">
-      <h2>Tokenomics</h2>
-      <ul>
-        <li>🔹 10M - Presale</li>
-        <li>🔹 10M - Developer & Influencer Pool</li>
-        <li>🔹 10M - Reserved</li>
-        <li>🔹 70M - Locked Liquidity Pool</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Roadmap -->
-  <section class="roadmap">
-    <div class="container">
-      <h2>Roadmap</h2>
-      <ul>
-        <li>🚀 Phase 1: Presale & Community Growth</li>
-        <li>🔒 Phase 2: Liquidity Addition</li>
-        <li>📈 Phase 3: Major Exchange Listings</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Join Team -->
-  <section class="join">
-    <div class="container">
-      <h2>Join Our Team</h2>
-      <p>Developer? Influencer? Partner? <a href="mailto:contact@cruttoofficial.com">Contact us</a></p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>© 2025 Crutto Official. All Rights Reserved.</p>
-    </div>
-  </footer>
-
-<script>
-  async function connectWallet() {
-    if (typeof window.ethereum !== 'undefined') {
-      try {
-        const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-        const address = accounts[0];
-        document.getElementById('connectButton').innerText = 'Connected: ' + address.slice(0,6) + '...' + address.slice(-4);
-      } catch (error) {
-        console.error(error);
-        alert('Connection Failed!');
-      }
-    } else {
-      alert('MetaMask is not installed.');
-    }
-  }
-
-  function openModal() {
-    document.getElementById('buyModal').style.display = 'block';
-  }
-
-  function closeModal() {
-    document.getElementById('buyModal').style.display = 'none';
-  }
-
-  window.onclick = function(event) {
-    const modal = document.getElementById('buyModal');
-    if (event.target == modal) {
-      modal.style.display = 'none';
-    }
-  }
-</script>
+<!-- Future Sections Placeholder -->
+<section id="features" style="height: 100vh; background: #1f2833;">
+  <h2 style="padding-top:150px;text-align:center;color:#66fcf1;">Features Coming Next...</h2>
+</section>
 
 </body>
 </html>
