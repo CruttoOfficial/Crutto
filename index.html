@@ -1,103 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crutto (CRT) - Presale Launch</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #111; color: #eee; }
-        header, section, footer { padding: 50px 20px; text-align: center; }
-        header { background: linear-gradient(135deg, #0d0d0d, #333); }
-        h1 { font-size: 3em; margin: 0.5em 0; }
-        h2 { font-size: 2em; margin: 1em 0; }
-        p { font-size: 1.2em; }
-        button { background-color: #00ff99; border: none; padding: 15px 30px; font-size: 1em; cursor: pointer; margin-top: 20px; border-radius: 10px; }
-        table { width: 100%; margin-top: 30px; border-collapse: collapse; }
-        th, td { padding: 15px; border: 1px solid #555; }
-        th { background-color: #222; }
-        footer { background: #222; font-size: 0.9em; }
-        .features, .tokenomics, .roadmap { background: #1a1a1a; margin: 20px 0; padding: 30px; border-radius: 15px; }
-        .features li { list-style: none; margin: 10px 0; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crutto (CRT) - Presale Live!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+      color: #eee;
+      scroll-behavior: smooth;
+    }
+    header {
+      text-align: center;
+      padding: 100px 20px 50px;
+      position: relative;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 2em;
+      margin: 40px 0 20px;
+    }
+    p {
+      font-size: 1.2em;
+    }
+    .btn {
+      background: #00ff99;
+      color: #000;
+      padding: 15px 30px;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #00cc77;
+      transform: scale(1.05);
+    }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .features, .tokenomics, .roadmap {
+      background: #111;
+      margin: 20px auto;
+      padding: 30px;
+      max-width: 1000px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #00ff99aa;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      max-width: 600px;
+      margin: auto;
+    }
+    li {
+      margin: 10px 0;
+      font-size: 1.2em;
+    }
+    table {
+      width: 90%;
+      margin: 30px auto;
+      border-collapse: collapse;
+      background: #1f1f1f;
+      box-shadow: 0 0 10px #00ff99aa;
+    }
+    th, td {
+      border: 1px solid #555;
+      padding: 15px;
+      font-size: 1em;
+    }
+    th {
+      background: #222;
+    }
+    td:hover {
+      background: #333;
+    }
+    footer {
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9em;
+      background: #000;
+      color: #aaa;
+      border-top: 1px solid #333;
+    }
+    #presale-badge {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #00ff99;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: bold;
+      animation: pulse 2s infinite;
+      z-index: 999;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 5px #00ff99aa; }
+      50% { box-shadow: 0 0 20px #00ff99; }
+      100% { box-shadow: 0 0 5px #00ff99aa; }
+    }
+  </style>
 </head>
 <body>
 
+<div id="presale-badge">🚀 PRESALE LIVE</div>
+
 <header>
-    <h1>Crutto (CRT)</h1>
-    <p>The Next-Gen Fully Decentralized Token</p>
-    <button onclick="document.getElementById('presale').scrollIntoView({ behavior: 'smooth' })">Join Presale</button>
+  <h1>Crutto (CRT)</h1>
+  <p>The Next-Gen Fully Decentralized Token</p>
+  <button class="btn" onclick="document.getElementById('presale').scrollIntoView({behavior:'smooth'})">Join Presale</button>
 </header>
 
 <section class="about">
-    <h2>About Crutto</h2>
-    <p>Crutto (CRT) is a revolutionary Ethereum-based token designed with decentralization, fairness, and community empowerment at its core.</p>
+  <h2>About Crutto</h2>
+  <p>Crutto (CRT) is a revolutionary Ethereum-based token designed for fairness, community empowerment, and true decentralization. Join us as we reshape the future of crypto.</p>
 </section>
 
 <section class="features">
-    <h2>Features</h2>
-    <ul>
-        <li>🔹 Fully Decentralized</li>
-        <li>🔹 Auto-Burn Mechanism</li>
-        <li>🔹 Anti-Whale Protection</li>
-        <li>🔹 Auto Liquidity Injection</li>
-        <li>🔹 Mint Lock Forever</li>
-        <li>🔹 Gas Optimized Contract</li>
-        <li>🔹 Open Source & Verified</li>
-        <li>🔹 Community Governance Future</li>
-        <li>🔹 Fair Launch with Presale Option</li>
-        <li>🔹 Ultra-Limited Initial Supply</li>
-    </ul>
+  <h2>Features</h2>
+  <ul>
+    <li>🔹 Fully Decentralized</li>
+    <li>🔹 Auto-Burn Mechanism</li>
+    <li>🔹 Anti-Whale Protection</li>
+    <li>🔹 Auto Liquidity Injection</li>
+    <li>🔹 Mint Lock Forever</li>
+    <li>🔹 Gas Optimized Contract</li>
+    <li>🔹 Open Source & Verified</li>
+    <li>🔹 Community Governance Future</li>
+    <li>🔹 Fair Launch with Presale Option</li>
+    <li>🔹 Ultra-Limited Initial Supply</li>
+  </ul>
 </section>
 
-<section id="presale">
-    <h2>Presale Details</h2>
-    <p>Accepting: ETH, USDT, BTC</p>
-    <p>Contract Address:</p>
-    <p><code>0x3Def65923477BBd0c79ce81A7B73DDA01d87eFe0</code></p>
-    <button>Connect Wallet</button>
+<section id="presale" class="features">
+  <h2>Presale Details</h2>
+  <p>Accepting: ETH, USDT, BTC</p>
+  <p>Contract Address:</p>
+  <code>0x3Def65923477BBd0c79ce81A7B73DDA01d87eFe0</code><br><br>
+  <button class="btn" onclick="connectWallet()">Connect Wallet</button>
 </section>
 
 <section class="comparison">
-    <h2>Crutto vs Competitors</h2>
-    <table>
-        <tr>
-            <th>Feature</th>
-            <th>Crutto</th>
-            <th>Shiba Inu</th>
-            <th>Dogecoin</th>
-            <th>Pepe Coin</th>
-        </tr>
-        <tr><td>Auto Burn</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td></tr>
-        <tr><td>Anti-Whale</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td></tr>
-        <tr><td>Fully Decentralized</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
-        <tr><td>Ownership Renounced</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
-        <tr><td>Gas Optimized Contract</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td></tr>
-        <tr><td>Open Source Verified</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td></tr>
-        <tr><td>Ultra Limited Supply</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td></tr>
-    </table>
+  <h2>Crutto vs Competitors</h2>
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>Crutto</th>
+      <th>Shiba Inu</th>
+      <th>Dogecoin</th>
+      <th>Pepe Coin</th>
+    </tr>
+    <tr><td>Auto Burn</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td></tr>
+    <tr><td>Anti-Whale</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td></tr>
+    <tr><td>Fully Decentralized</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+    <tr><td>Ownership Renounced</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+    <tr><td>Gas Optimized Contract</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td></tr>
+    <tr><td>Open Source Verified</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td></tr>
+    <tr><td>Ultra Limited Supply</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td></tr>
+  </table>
 </section>
 
 <section class="tokenomics">
-    <h2>Tokenomics</h2>
-    <p>Total Supply: 100 Million CRT</p>
-    <p>🔹 70% Liquidity</p>
-    <p>🔹 10% Presale</p>
-    <p>🔹 10% Development & Promotions</p>
-    <p>🔹 10% Founders (locked)</p>
+  <h2>Tokenomics</h2>
+  <p>Total Supply: 100 Million CRT</p>
+  <p>🔹 70% Liquidity</p>
+  <p>🔹 10% Presale</p>
+  <p>🔹 10% Development & Promotions</p>
+  <p>🔹 10% Founders (locked)</p>
 </section>
 
 <section class="roadmap">
-    <h2>Roadmap</h2>
-    <p>🚀 Launch on DEX</p>
-    <p>🚀 Listings on CMC & CG</p>
-    <p>🚀 Community Governance</p>
-    <p>🚀 Big Exchange Listings</p>
+  <h2>Roadmap</h2>
+  <p>🚀 Launch on DEX</p>
+  <p>🚀 Listings on CMC & CG</p>
+  <p>🚀 Community Governance</p>
+  <p>🚀 Big Exchange Listings</p>
 </section>
 
 <footer>
-    <p>Contract: 0x3Def65923477BBd0c79ce81A7B73DDA01d87eFe0</p>
-    <p>Disclaimer: Crypto investments are risky. DYOR (Do Your Own Research).</p>
+  <p>Contract: 0x3Def65923477BBd0c79ce81A7B73DDA01d87eFe0</p>
+  <p>Disclaimer: Crypto investments carry risks. DYOR (Do Your Own Research).</p>
 </footer>
+
+<script>
+  async function connectWallet() {
+    if (window.ethereum) {
+      try {
+        await window.ethereum.request({ method: 'eth_requestAccounts' });
+        alert('Wallet Connected! 🚀');
+      } catch (err) {
+        alert('Connection failed.');
+      }
+    } else {
+      alert('MetaMask not detected!');
+    }
+  }
+</script>
 
 </body>
 </html>
