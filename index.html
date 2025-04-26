@@ -161,6 +161,31 @@
     You will get: 0 CRT
   </div>
 
+  <!-- Payment Card Section -->
+<div id="paymentCard" style="display:none; margin-top:30px; background:rgba(0,0,0,0.7); padding:20px; border-radius:15px; box-shadow:0 0 20px #00ff99aa;">
+
+  <h3 style="color:#00ff99;">🪙 Send Payment Details</h3>
+  
+  <p style="margin-top:10px;">Send exactly:</p>
+  <p id="ethToSend" style="font-size:1.5em;color:#00ff99;font-weight:bold;">0 ETH</p>
+  
+  <p style="margin-top:10px;">to the address:</p>
+  <div style="background:#222;padding:10px;border-radius:10px;word-break:break-all;font-size:1em;">
+    0x6a9EB902FCBAF18b6E1c2Ab6EB8e3Fc349d1E80E
+  </div>
+
+  <button onclick="copyAddress()" style="margin-top:10px;padding:10px 20px;background:#00ff99;color:#000;border:none;border-radius:10px;font-weight:bold;cursor:pointer;box-shadow:0 0 15px #00ff99;">
+    📋 Copy Wallet Address
+  </button>
+
+  <p style="margin-top:15px;font-size:0.9em;color:#aaa;">
+    ⚡ Send from any wallet (Trust Wallet, MetaMask, Coinbase, etc.)<br>
+    ⚡ CRT Tokens will be manually distributed within 24 hours after your purchase.
+  </p>
+
+</div>
+
+
   <!-- 24H Manual Transfer Note -->
   <p style="font-size:0.9em;color:#aaa;margin-top:10px;">
     ⚡ CRT Tokens will be manually distributed within 24 hours after your purchase.
@@ -479,6 +504,25 @@
 </style>
 <!-- JavaScript Part -->
 <script>
+  // Show Payment Card based on ETH entered
+document.getElementById('ethAmount').addEventListener('input', function() {
+  const ethEntered = document.getElementById('ethAmount').value;
+  if (ethEntered > 0) {
+    document.getElementById('paymentCard').style.display = 'block';
+    document.getElementById('ethToSend').innerText = ethEntered + ' ETH';
+  } else {
+    document.getElementById('paymentCard').style.display = 'none';
+  }
+});
+
+// Copy Wallet Address Function
+function copyAddress() {
+  const address = '0x6a9EB902FCBAF18b6E1c2Ab6EB8e3Fc349d1E80E';
+  navigator.clipboard.writeText(address);
+  alert('✅ Wallet Address Copied!');
+}
+
+  
 // =================== FLOATING PARTICLES BACKGROUND ===================
 const canvas = document.getElementById('particles-js');
 const ctx = canvas.getContext('2d');
