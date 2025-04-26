@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Crutto (CRT) - Presale Live!</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
       color: #eee;
       scroll-behavior: smooth;
     }
@@ -48,7 +48,7 @@
       padding: 60px 20px;
       text-align: center;
     }
-    .features, .tokenomics, .roadmap {
+    .features, .tokenomics, .roadmap, .faq {
       background: #111;
       margin: 20px auto;
       padding: 30px;
@@ -110,21 +110,55 @@
       50% { box-shadow: 0 0 20px #00ff99; }
       100% { box-shadow: 0 0 5px #00ff99aa; }
     }
+    .faq-item {
+      margin-bottom: 15px;
+      background: #222;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .faq-question {
+      padding: 15px;
+      background: #00ff99;
+      color: #000;
+      font-weight: bold;
+    }
+    .faq-answer {
+      display: none;
+      padding: 15px;
+      background: #111;
+      color: #eee;
+      border-top: 1px solid #333;
+    }
+    input[type=\"number\"] {
+      padding: 10px;
+      font-size: 1.1em;
+      width: 200px;
+      margin-top: 10px;
+      border-radius: 10px;
+      border: none;
+      text-align: center;
+    }
+    .conversion-result {
+      margin-top: 10px;
+      font-size: 1.3em;
+      color: #00ff99;
+    }
   </style>
 </head>
+
 <body>
 
-<div id="presale-badge">🚀 PRESALE LIVE</div>
+<div id=\"presale-badge\">🚀 PRESALE LIVE</div>
 
 <header>
   <h1>Crutto (CRT)</h1>
   <p>The Next-Gen Fully Decentralized Token</p>
-  <button class="btn" onclick="document.getElementById('presale').scrollIntoView({behavior:'smooth'})">Join Presale</button>
+  <button class=\"btn\" onclick=\"document.getElementById('presale').scrollIntoView({behavior:'smooth'})\">Join Presale</button>
 </header>
-
 <section class="about">
   <h2>About Crutto</h2>
-  <p>Crutto (CRT) is a revolutionary Ethereum-based token designed for fairness, community empowerment, and true decentralization. Join us as we reshape the future of crypto.</p>
+  <p>Crutto (CRT) is a revolutionary Ethereum-based token created for fairness, empowerment, and true decentralization. No VCs, no scams — just pure community power. 🚀</p>
 </section>
 
 <section class="features">
@@ -145,10 +179,13 @@
 
 <section id="presale" class="features">
   <h2>Presale Details</h2>
-  <p>Accepting: ETH, USDT, BTC</p>
-  <p>Contract Address:</p>
-  <code>0x3Def65923477BBd0c79ce81A7B73DDA01d87eFe0</code><br><br>
-  <button class="btn" onclick="connectWallet()">Connect Wallet</button>
+  <p>Live ETH Price: <span id="ethPrice">Loading...</span> USD</p>
+  <p>Presale Rate: <strong>1 CRT = $0.10</strong></p>
+  <p>Enter the amount of ETH you want to invest:</p>
+  <input type="number" id="ethAmount" placeholder="Enter ETH">
+  <div class="conversion-result" id="crtResult">You will get: 0 CRT</div>
+  <p><small>⚡ Tokens will be manually distributed within 24 hours of your payment.</small></p><br>
+  <button class="btn" onclick="connectWallet()">Connect Wallet & Buy</button>
 </section>
 
 <section class="comparison">
@@ -183,9 +220,34 @@
 <section class="roadmap">
   <h2>Roadmap</h2>
   <p>🚀 Launch on DEX</p>
-  <p>🚀 Listings on CMC & CG</p>
+  <p>🚀 Listings on CoinMarketCap & CoinGecko</p>
   <p>🚀 Community Governance</p>
   <p>🚀 Big Exchange Listings</p>
+</section>
+
+<section class="faq">
+  <h2>FAQ</h2>
+
+  <div class="faq-item" onclick="toggleFaq(0)">
+    <div class="faq-question">How do I buy CRT tokens?</div>
+    <div class="faq-answer">Connect your wallet, enter ETH amount, and complete the transaction. You will receive CRT within 24 hours.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(1)">
+    <div class="faq-question">When will I receive my tokens?</div>
+    <div class="faq-answer">You will receive CRT tokens manually within 24 hours after your confirmed payment.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(2)">
+    <div class="faq-question">Can I cancel after sending ETH?</div>
+    <div class="faq-answer">No, transactions are final. Please double-check amounts before confirming your payment.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(3)">
+    <div class="faq-question">Why choose Crutto?</div>
+    <div class="faq-answer">Crutto is ultra-limited, fair-launched, fully decentralized, auto-burn enabled and community powered. It's built to grow fast.</div>
+  </div>
+
 </section>
 
 <footer>
@@ -194,18 +256,63 @@
 </footer>
 
 <script>
-  async function connectWallet() {
-    if (window.ethereum) {
-      try {
-        await window.ethereum.request({ method: 'eth_requestAccounts' });
-        alert('Wallet Connected! 🚀');
-      } catch (err) {
-        alert('Connection failed.');
-      }
-    } else {
-      alert('MetaMask not detected!');
-    }
+let ethPrice = 0;
+
+async function fetchEthPrice() {
+  try {
+    const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd');
+    const data = await response.json();
+    ethPrice = data.ethereum.usd;
+    document.getElementById('ethPrice').textContent = ethPrice + ' USD';
+    calculateCRT();
+  } catch (error) {
+    console.error('Error fetching ETH price:', error);
+    document.getElementById('ethPrice').textContent = 'Error loading price';
   }
+}
+
+function calculateCRT() {
+  const ethAmount = document.getElementById('ethAmount').value;
+  if (ethAmount && ethPrice) {
+    const usd = ethAmount * ethPrice;
+    const crtAmount = usd / 0.10;
+    document.getElementById('crtResult').innerText = 'You will get: ' + Math.floor(crtAmount) + ' CRT';
+  } else {
+    document.getElementById('crtResult').innerText = 'You will get: 0 CRT';
+  }
+}
+
+document.getElementById('ethAmount').addEventListener('input', calculateCRT);
+
+// Fetch ETH price every 30 seconds
+fetchEthPrice();
+setInterval(fetchEthPrice, 30000);
+
+// Wallet Connect (basic)
+async function connectWallet() {
+  if (window.ethereum) {
+    try {
+      await window.ethereum.request({ method: 'eth_requestAccounts' });
+      alert('Wallet Connected! 🚀');
+    } catch (err) {
+      alert('Connection failed.');
+    }
+  } else {
+    alert('MetaMask not detected!');
+  }
+}
+
+// FAQ expand/collapse
+function toggleFaq(index) {
+  const answers = document.querySelectorAll('.faq-answer');
+  const answer = answers[index];
+  if (answer.style.display === 'block') {
+    answer.style.display = 'none';
+  } else {
+    answers.forEach(ans => ans.style.display = 'none');
+    answer.style.display = 'block';
+  }
+}
 </script>
 
 </body>
